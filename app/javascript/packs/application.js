@@ -11,3 +11,9 @@ import "channels"
 Rails.start()
 Turbolinks.start()
 ActiveStorage.start()
+
+import "semantic-ui-sass"
+
+$(document).on('turbolinks:load', function() {
+  
+})
