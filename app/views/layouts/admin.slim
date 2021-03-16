@@ -8,4 +8,9 @@ html
     = javascript_pack_tag 'admin', 'data-turbolinks-track': 'reload'
     = stylesheet_link_tag 'admin', media: 'all', 'data-turbolinks-track': 'reload'
   body
-    = yield
+    = render 'layouts/shared/admin/sidebar'
+    .pusher
+      = render 'layouts/shared/admin/header'
+      .ui.container
+        = render 'devise/shared/alerts'
+        = yield

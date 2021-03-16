@@ -15,5 +15,10 @@ ActiveStorage.start()
 import "semantic-ui-sass"
 
 $(document).on('turbolinks:load', function() {
-  
-})
+
+  $('#menutoggle').click(function() {
+    $('.ui.sidebar').sidebar('toggle');
+  });
+
+  $('.ui.dropdown').dropdown();
+});

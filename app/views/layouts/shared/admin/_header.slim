@@ -1,0 +1,10 @@
+.ui.tiny.menu
+  a.item#menutoggle
+    i.sidebar.icon
+    | Menu
+  .right.menu
+    .ui.dropdown.item
+      = current_user.fullname
+      i.dropdown.icon
+      .menu
+        = link_to "Logout", destroy_user_session_path, class: "item", data: {:confirm => 'Are you sure?'}, method: :delete
