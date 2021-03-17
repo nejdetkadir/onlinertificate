@@ -1,0 +1,19 @@
+h1 Members
+= link_to "Create member", new_admin_member_path, class: "ui primary button mb-1"
+table.ui.table#datatable
+  thead
+    tr
+      th Fullname
+      th Email
+      th Code
+      th Operations
+  tbody
+    tr
+      td Lorem ipsum
+      td dolor@sit.amet
+      td 123456
+      td
+        .ui.buttons
+          //= link_to "Edit", edit_admin_member_path(), class: "ui negative button"
+          .or
+          //= link_to "Edit", edit_admin_member_path(), class: "ui negative button"

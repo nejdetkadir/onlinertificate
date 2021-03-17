@@ -14,6 +14,9 @@ ActiveStorage.start()
 
 import "semantic-ui-sass"
 
+window.jQuery = $;
+window.$ = $;
+
 $(document).on('turbolinks:load', function() {
 
   $('#menutoggle').click(function() {
@@ -21,4 +24,8 @@ $(document).on('turbolinks:load', function() {
   });
 
   $('.ui.dropdown').dropdown();
+
+  $(document).ready( function () {
+    $('#datatable').DataTable();
+} );
 });
