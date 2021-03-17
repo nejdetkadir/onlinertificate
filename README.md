@@ -1,2 +1,2 @@
 # onlinertificate
-Onlinertificate is a open source CMS for organizations, companies or school clubs
+Onlinertificate is an open source CMS for organizations, companies or school clubs
