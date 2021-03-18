@@ -1,0 +1,26 @@
+= link_to "Go Back", admin_members_path, class: "ui primary button mb-1"
+= simple_form_for @member, :html=> { class: 'ui form' }, url: path do |f|
+  = render "devise/shared/error_messages", resource: @member
+  h1.ui.dividing.header
+    - if @member.new_record?
+      | Create a member
+    - else
+      | Edit a member
+  .two.fields
+    .field
+      = f.label :fullname
+      = f.input_field :fullname
+    .field
+      = f.label :phone_number
+      = f.input_field :phone_number, id: "phone"
+  .two.fields
+    .field
+      = f.label :email
+      = f.input_field :email
+    .field
+      = f.label :from
+      = f.input_field :from
+  - if !@member.new_record?
+    .field
+      = f.input :is_active
+  = f.submit class: "ui positive button"

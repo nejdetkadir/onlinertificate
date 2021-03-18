@@ -8,6 +8,7 @@
     "@rails/webpacker": "5.2.1",
     "datatables.net-dt": "^1.10.24",
     "jquery": "^3.6.0",
+    "jquery-mask-plugin": "^1.14.16",
     "popper.js": "^1.16.1",
     "semantic-ui-sass": "^2.4.2",
     "turbolinks": "^5.2.0"

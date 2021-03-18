@@ -1,0 +1,24 @@
+= link_to "Go Back", admin_members_path, class: "ui primary button mb-1"
+.ui.fluid.card
+  .content
+    .header
+      = @member.fullname
+    .meta Created at #{time_ago_in_words(@member.created_at)} ago
+    .meta Updated at #{time_ago_in_words(@member.updated_at)} ago
+    .description
+      div
+        b Phone Number : 
+        = @member.phone_number
+      div
+        b From : 
+        = @member.from
+      div
+        b Code : 
+        = @member.code
+  .extra.content
+    - if @member.is_active
+      i.check.icon.ui.green
+      | active
+    - else
+      i.minus.icon.ui.red
+      | passive

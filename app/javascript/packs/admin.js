@@ -13,6 +13,7 @@ Turbolinks.start()
 ActiveStorage.start()
 
 import "semantic-ui-sass"
+import "jquery-mask-plugin"
 
 window.jQuery = $;
 window.$ = $;
@@ -27,5 +28,15 @@ $(document).on('turbolinks:load', function() {
 
   $(document).ready( function () {
     $('#datatable').DataTable();
-} );
+  });
+
+  $('.message .close')
+  .on('click', function() {
+    $(this)
+      .closest('.message')
+      .transition('fade')
+    ;
+  }); 
+
+  $("#phone").mask("(999) 999-9999"); 
 });
