@@ -30,6 +30,9 @@ gem 'slim'
 gem 'active_link_to'
 gem 'simple_form'
 gem 'devise'
+gem 'ckeditor', github: 'galetahub/ckeditor'
+gem 'carrierwave'
+gem 'mini_magick'
 
 # Reduces boot times through caching; required in config/boot.rb
 gem 'bootsnap', '>= 1.4.4', require: false

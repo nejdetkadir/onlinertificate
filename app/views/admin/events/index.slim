@@ -1,0 +1,36 @@
+h1 Events
+= link_to "Create an event", new_admin_event_path, class: "ui primary button mb-1"
+table.ui.table#datatable
+  thead
+    tr
+      th Name
+      th Cover
+      th Event Date
+      th Status
+      th Operations
+  tbody
+    - @events.each do |e|
+      tr
+        td
+          = e.name
+        td
+          = image_tag(e.cover_url(:thumb)) if e.cover? 
+        td
+          = e.event_date
+        td 
+          - if (Date.today..e.event_date.to_date).count > 0 
+            | active
+            i.check.icon.ui.green
+          - else
+            | passive
+            i.check.icon.ui.red
+        td
+          .ui.icon.buttons
+            = link_to admin_event_path(e), class: "ui positive button" do
+              i.eye.icon
+            = link_to admin_event_participants_path(e), class: "ui brown button" do
+              i.users.icon
+            = link_to edit_admin_event_path(e), class: "ui primary button" do
+              i.edit.icon
+            = link_to admin_event_path(e), class: "ui negative button", data: {:confirm => 'Are you sure?'}, method: :delete do
+              i.trash.icon

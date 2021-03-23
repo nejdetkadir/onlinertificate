@@ -1,0 +1,35 @@
+= link_to "Go Back", admin_events_path, class: "ui primary button mb-1"
+= simple_form_for @event, :html=> { class: 'ui form' }, url: path do |f|
+  = render "devise/shared/error_messages", resource: @event
+  h1.ui.dividing.header
+    - if @event.new_record?
+      | Create an event
+    - else
+      | Edit an event
+  .field
+    = f.label :name
+    = f.input_field :name
+  .field
+    = f.label :description
+    = f.input_field :description, as: :ckeditor
+  .field
+    = f.label :cover
+    - if @event.cover?
+      = image_tag(@event.cover_url(:medium))
+    = f.file_field :cover
+  .field
+    = f.label :event_date
+    .three.fields
+      .field#f1
+      .field#f2
+      .field#f3
+      = f.input_field :event_date, as: :date, start_year: Date.today.year, end_year: Date.today.year+5
+  .field
+    = f.label :url
+    = f.input_field :url, type: "url"
+  = f.submit class: "ui positive button"
+
+javascript:
+  $("#f1").append($("#event_event_date_1i"))
+  $("#f2").append($("#event_event_date_2i"))
+  $("#f3").append($("#event_event_date_3i"))
