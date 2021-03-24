@@ -1,4 +1,6 @@
 class Event < ApplicationRecord
+  has_many :participants
+  
   mount_uploader :cover, ImageUploader
 
   validates :name, presence: true, length: {minimum: 3}
