@@ -41,7 +41,7 @@ module Admin
       end
 
       def events_params
-        params.require(:event).permit(:name, :description, :cover, :event_date, :url)
+        params.require(:event).permit(:name, :description, :cover, :certificate_scaffold, :event_date, :url)
       end
   end
 end

@@ -1,0 +1,26 @@
+h1 Participants of #{@event.name}
+= link_to "Create a participant", new_admin_event_participant_path(@event), class: "ui primary button mb-1"
+table.ui.table#datatable
+  thead
+    tr
+      th Fullname
+      th Email
+      th Code
+      th Operations
+  tbody
+    - @participants.each do |p|
+      tr
+        td
+          = p.fullname
+        td
+          = p.email
+        td
+          = p.code
+        td
+          .ui.icon.buttons
+            = link_to admin_event_participant_path(@event, p), class: "ui positive button" do
+              i.eye.icon
+            = link_to edit_admin_event_participant_path(@event, p), class: "ui primary button" do
+              i.edit.icon
+            = link_to admin_event_participant_path(@event, p), class: "ui negative button", data: {:confirm => 'Are you sure?'}, method: :delete do
+              i.trash.icon

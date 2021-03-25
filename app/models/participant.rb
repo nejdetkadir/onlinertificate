@@ -1,7 +1,7 @@
 class Participant < ApplicationRecord
   belongs_to :event
 
-  mount_uploader :certificate, ImageUploader
+  mount_uploader :certificate, CertificateUploader
 
   validates :fullname, presence: :true
   validates :email, presence: :true

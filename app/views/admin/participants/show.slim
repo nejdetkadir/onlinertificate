@@ -1,0 +1,11 @@
+= link_to "Go Back", admin_event_participants_path(@event), class: "ui primary button mb-1"
+.ui.fluid.card
+  .image  
+    = image_tag(@participant.certificate_url, class: "ui fluid image") if @participant.certificate?
+  .content
+    .header
+      = @participant.fullname
+    .meta Email : #{@participant.email}
+    .meta Phone : #{@participant.phone}
+javascript:
+  $("img").addClass("ui fluid image");

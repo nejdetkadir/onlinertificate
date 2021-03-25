@@ -18,6 +18,11 @@
       = image_tag(@event.cover_url(:medium))
     = f.file_field :cover
   .field
+    = f.label :certificate_scaffold
+    - if @event.certificate_scaffold?
+      = image_tag(@event.certificate_scaffold_url(:medium))
+    = f.file_field :certificate_scaffold
+  .field
     = f.label :event_date
     .three.fields
       .field#f1

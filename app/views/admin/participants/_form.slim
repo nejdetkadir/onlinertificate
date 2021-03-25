@@ -1,0 +1,19 @@
+= link_to "Go Back", admin_event_participants_path(@event), class: "ui primary button mb-1"
+= simple_form_for @participant, :html=> { class: 'ui form' }, url: path do |f|
+  = render "devise/shared/error_messages", resource: @participant
+  h1.ui.dividing.header
+    - if @participant.new_record?
+      | Create a participant
+    - else
+      | Edit a participant
+  .three.fields
+    .field
+      = f.label :fullname
+      = f.input_field :fullname
+    .field
+      = f.label :phone
+      = f.input_field :phone, id: "phone"
+    .field
+      = f.label :email
+      = f.input_field :email
+  = f.submit class: "ui positive button"
