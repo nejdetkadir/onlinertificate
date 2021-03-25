@@ -5,4 +5,5 @@ scope 'admin', module: 'admin', as: 'admin' do
   resources :events do
     resources :participants
   end
+  resources :corporates
 end

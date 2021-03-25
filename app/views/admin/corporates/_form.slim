@@ -1,0 +1,15 @@
+= link_to "Go Back", admin_corporates_path, class: "ui primary button mb-1"
+= simple_form_for @corporate, :html=> { class: 'ui form' }, url: path do |f|
+  = render "devise/shared/error_messages", resource: @corporate
+  h1.ui.dividing.header
+    - if @corporate.new_record?
+      | Create a corporate pages
+    - else
+      | Edit a corporate pages
+  .field
+    = f.label :title
+    = f.input_field :title
+  .field
+    = f.label :body
+    = f.input_field :body, as: :ckeditor
+  = f.submit class: "ui positive button"

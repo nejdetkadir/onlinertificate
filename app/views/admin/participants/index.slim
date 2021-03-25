@@ -1,5 +1,6 @@
 h1 Participants of #{@event.name}
 = link_to "Create a participant", new_admin_event_participant_path(@event), class: "ui primary button mb-1"
+= link_to "Go Back to Events", admin_events_path, class: "ui positive button mb-1"
 table.ui.table#datatable
   thead
     tr

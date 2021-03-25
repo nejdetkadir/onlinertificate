@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  get 'corporates/index'
   mount Ckeditor::Engine => '/ckeditor'
   devise_for :users
 
