@@ -1,0 +1,15 @@
+= link_to "Go Back", admin_faqs_path, class: "ui primary button mb-1"
+= simple_form_for @faq, :html=> { class: 'ui form' }, url: path do |f|
+  = render "devise/shared/error_messages", resource: @faq
+  h1.ui.dividing.header
+    - if @faq.new_record?
+      | Create a FAQ
+    - else
+      | Edit a FAQ
+  .field
+    = f.label :ask
+    = f.input_field :ask
+  .field
+    = f.label :answer
+    = f.input_field :answer
+  = f.submit class: "ui positive button"

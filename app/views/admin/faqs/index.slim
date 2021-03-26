@@ -1,0 +1,20 @@
+h1 FAQs
+= link_to "Create a faq", new_admin_faq_path, class: "ui primary button mb-1"
+table.ui.table
+  thead
+    tr
+      th Ask
+      th Operations
+  tbody
+    - @faqs.each do |f|
+      tr
+        td
+          = f.ask
+        td
+          .ui.icon.buttons
+            = link_to admin_faq_path(f), class: "ui positive button" do
+              i.eye.icon
+            = link_to edit_admin_faq_path(f), class: "ui primary button" do
+              i.edit.icon
+            = link_to admin_faq_path(f), class: "ui negative button", data: {:confirm => 'Are you sure?'}, method: :delete do
+              i.trash.icon

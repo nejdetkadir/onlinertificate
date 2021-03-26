@@ -1,0 +1,9 @@
+= link_to "Go Back", admin_faqs_path, class: "ui primary button mb-1"
+.ui.fluid.card
+  .content
+    .header
+      = @faq.ask
+    .meta Created at #{time_ago_in_words(@faq.created_at)} ago
+    .meta Updated at #{time_ago_in_words(@faq.updated_at)} ago
+    .description
+      = @faq.answer
