@@ -7,4 +7,6 @@ scope 'admin', module: 'admin', as: 'admin' do
   end
   resources :corporates
   resources :faqs
+  resources :blogs
+  resources :blog_categories
 end

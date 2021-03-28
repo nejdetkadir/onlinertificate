@@ -1,0 +1,22 @@
+h1 Blog Categories
+= link_to "Create a category", new_admin_blog_category_path, class: "ui primary button mb-1"
+= link_to "Go Back to Blogs", admin_blogs_path, class: "ui positive button mb-1"
+table.ui.table
+  thead
+    tr
+      th Name
+      th Total Blog
+      th Operations
+  tbody
+    - @categories.each do |c|
+      tr
+        td
+          = c.name
+        td 
+          = c.blogs.count
+        td
+          .ui.icon.buttons
+            = link_to edit_admin_blog_category_path(c), class: "ui primary button" do
+              i.edit.icon
+            = link_to admin_blog_category_path(c), class: "ui negative button", data: {:confirm => 'Are you sure?'}, method: :delete do
+              i.trash.icon

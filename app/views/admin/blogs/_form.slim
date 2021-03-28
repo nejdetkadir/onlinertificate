@@ -1,0 +1,18 @@
+= link_to "Go Back", admin_blogs_path, class: "ui primary button mb-1"
+= simple_form_for @blog, :html=> { class: 'ui form' }, url: path do |f|
+  = render "devise/shared/error_messages", resource: @blog
+  h1.ui.dividing.header
+    - if @blog.new_record?
+      | Create a blog
+    - else
+      | Edit a blog
+  .field
+    = f.label :blog_category
+    = f.input_field :blog_category_id, collection: @categories, selected: @blog.new_record? ? @categories.first.id : @blog.blog_category_id
+  .field
+    = f.label :title
+    = f.input_field :title
+  .field
+    = f.label :body
+    = f.input_field :body, as: :ckeditor
+  = f.submit class: "ui positive button"

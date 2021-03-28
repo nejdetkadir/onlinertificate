@@ -1,0 +1,10 @@
+= link_to "Go Back", admin_blogs_path, class: "ui primary button mb-1"
+.ui.fluid.card
+  .content
+    .header
+      = @blog.title
+    .meta Created at #{time_ago_in_words(@blog.created_at)} ago
+    .meta Updated at #{time_ago_in_words(@blog.updated_at)} ago
+    .meta Category : #{@blog.blog_category.name}
+    .description
+      = raw @blog.body
